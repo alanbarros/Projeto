@@ -36,10 +36,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(326, 296);
             this.Name = "PopUpCliente";
-            this.Text = "PopUpCliente";
+            this.Text = "Teste";
             this.ResumeLayout(false);
-
-            // Comentário
 
         }
 
