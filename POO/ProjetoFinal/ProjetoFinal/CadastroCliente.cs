@@ -25,12 +25,11 @@ namespace ProjetoFinal
 		}
 
 		private void listClientes_DoubleClick(object sender, EventArgs e){
-			EditarCliente();
+			EditarCliente(listClientes.SelectedIndex);
 		}
 
 		void BtnBuscar_Click(object sender, EventArgs e){
-			MessageBox.Show("Clicado!");
-			Buscar(txtBuscar.ToString());
+			Buscar(txtBuscar.Text);
 		}
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -45,7 +44,7 @@ namespace ProjetoFinal
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            bool foi = EditarCliente();
+			bool foi = EditarCliente(listClientes.SelectedIndex);
 
             if (!foi)
             {
@@ -56,16 +55,18 @@ namespace ProjetoFinal
         // Controlers
         
 		void Buscar(string cpf){
-			Cliente cliente;
-			foreach(Cliente c in dao.cliente){
-				if(c.Equals(cpf)){
-					cliente = c;
-					MessageBox.Show("Encontrado!");
-					break;
-				}
-				MessageBox.Show("Não encontrado");
-			}
 
+			if (dao.cliente.Count == 0)
+			{
+				MessageBox.Show("Não ha clientes");
+			}
+			else
+			{
+				if (!EditarCliente(new Cliente(cpf)))
+				{
+					MessageBox.Show("Cliente não encontrado!");
+				}
+			}
 		}
 
        private void AtualizarLista()
@@ -81,9 +82,8 @@ namespace ProjetoFinal
             AtualizarLista();
         }
 
-        private bool EditarCliente()
+        private bool EditarCliente(int posicao)
         {
-            int posicao = listClientes.SelectedIndex;
             if(posicao > -1)
             {
                 FormCliente popup = new FormCliente(dao, posicao);
@@ -91,11 +91,17 @@ namespace ProjetoFinal
                 AtualizarLista();
 
                 return true;
-            } else
-            {
-                return false;
-            }
+            } 
+			return false;
         }
+
+		bool EditarCliente(Cliente cliente){
+			int posicao = dao.cliente.IndexOf(cliente);
+			if(posicao > -1){
+				return EditarCliente(posicao);
+			}          
+			return false;         
+		}
 
         private bool ExcluirCliente()
         {

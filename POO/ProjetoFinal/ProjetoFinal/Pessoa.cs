@@ -11,25 +11,29 @@ namespace ProjetoFinal
         public string Nome { get; private set; }
         public string Cpf { get; private set; }
         public DateTime DataNascimento { get; private set; }
-		public StatusEnum _status { get; private set; }
+		public StatusEnum Status { get; private set; }
 
-		public Pessoa(string Nome, string Cpf, DateTime DataNascimento, StatusEnum _status)
+		public Pessoa(string Nome, string Cpf, DateTime DataNascimento, StatusEnum Status)
         {
             this.Nome = Nome;
             this.Cpf = Cpf;
             this.DataNascimento = DataNascimento;
-			this._status = _status;
+			this.Status = Status;
         }
+
+		public Pessoa(string Cpf){
+			this.Cpf = Cpf;
+		}
 
 		public override bool Equals(object obj)
 		{
-			var cpf = obj as String;
+			var idCli = obj as Cliente;
 
-			if (cpf == null){
+			if (idCli == null){
 				return false;
 			}
 
-			return Cpf.Equals(cpf);
+			return Cpf.Equals(idCli.Cpf);
 		}
 
 		public override int GetHashCode()
@@ -39,11 +43,8 @@ namespace ProjetoFinal
 	}
 
 	public enum StatusEnum{
-		//[EnumMenber, Description("Ativo")]
-		Ativo = 0,
-		//[EnumMenber, Description("Inativo")]
-        Inativo = 1,
-		//[EnumMenber,Description("Bloqueado")]
+		Inativo = 0,
+        Ativo = 1,
 		Bloqueado = 2
 	}
 }

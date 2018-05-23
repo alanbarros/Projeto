@@ -74,7 +74,7 @@ namespace ProjetoFinal
             txtNumero.Text = c.EnderecoDeEntrega.Numero;
             cmbUf.Text = c.EnderecoDeEntrega.Uf;
             txtCPF.Text = c.Cpf;
-            cmbStatus.Text = c._status.ToString();
+            cmbStatus.Text = c.Status.ToString();
             mtxtDataNascimento.Text = c.DataNascimento.ToString("dd/MM/yyyy");
         }
 
@@ -95,7 +95,7 @@ namespace ProjetoFinal
 
         bool MontarCliente() // Atribui o valor da variavel cliente
         {
-            Endereco e = new Endereco(txtLougradouro.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, txtCep.Text, cmbUf.Text)
+			Endereco e = new Endereco(txtLougradouro.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, txtCep.Text, cmbUf.Text);
 				
             // Convertendo string do combobox para enum
             Enum.TryParse(cmbStatus.Text, out StatusEnum Status);
