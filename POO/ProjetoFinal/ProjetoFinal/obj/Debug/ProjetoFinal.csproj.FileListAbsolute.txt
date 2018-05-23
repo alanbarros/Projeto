@@ -1,0 +1,10 @@
+C:\Users\CT Noite\Documents\Alan\GitHub\Senai\POO\ProjetoFinal\ProjetoFinal\bin\Debug\ProjetoFinal.exe.config
+C:\Users\CT Noite\Documents\Alan\GitHub\Senai\POO\ProjetoFinal\ProjetoFinal\bin\Debug\ProjetoFinal.exe
+C:\Users\CT Noite\Documents\Alan\GitHub\Senai\POO\ProjetoFinal\ProjetoFinal\bin\Debug\ProjetoFinal.pdb
+C:\Users\CT Noite\Documents\Alan\GitHub\Senai\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csprojResolveAssemblyReference.cache
+C:\Users\CT Noite\Documents\Alan\GitHub\Senai\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.CadastroCliente.resources
+C:\Users\CT Noite\Documents\Alan\GitHub\Senai\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.Properties.Resources.resources
+C:\Users\CT Noite\Documents\Alan\GitHub\Senai\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csproj.GenerateResource.Cache
+C:\Users\CT Noite\Documents\Alan\GitHub\Senai\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.exe
+C:\Users\CT Noite\Documents\Alan\GitHub\Senai\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.pdb
+C:\Users\CT Noite\Documents\Alan\GitHub\Senai\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.PopUpAddCli.resources
