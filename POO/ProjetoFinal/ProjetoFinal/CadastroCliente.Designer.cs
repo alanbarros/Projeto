@@ -33,6 +33,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.listClientes = new System.Windows.Forms.ListBox();
             this.btnExcluir = new System.Windows.Forms.Button();
+			this.txtBuscar = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -43,6 +44,7 @@
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+			this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // btnNovo
             // 
@@ -71,6 +73,7 @@
             this.listClientes.Name = "listClientes";
             this.listClientes.Size = new System.Drawing.Size(183, 134);
             this.listClientes.TabIndex = 4;
+			this.listClientes.DoubleClick += new System.EventHandler(this.listClientes_DoubleClick);
             // 
             // btnExcluir
             // 
@@ -92,9 +95,17 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnBuscar);
+			this.Controls.Add(this.txtBuscar);
             this.Name = "CadastroCliente";
             this.Text = "CadastroCliente";
             this.ResumeLayout(false);
+			// 
+            // txtBuscar
+            // 
+			this.txtBuscar.Location = new System.Drawing.Point(35, 80);
+			this.txtBuscar.Name = "txtNumero";
+			this.txtBuscar.Size = new System.Drawing.Size(104, 20);
+			this.txtBuscar.TabIndex = 12;
 
         }
 
@@ -105,5 +116,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.ListBox listClientes;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

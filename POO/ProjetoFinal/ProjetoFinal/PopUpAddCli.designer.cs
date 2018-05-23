@@ -34,7 +34,7 @@
             this.txtLougradouro = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.btnGravar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.grbEndereco = new System.Windows.Forms.GroupBox();
             this.cmbUf = new System.Windows.Forms.ComboBox();
@@ -104,13 +104,13 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(204, 296);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
-            this.btnAdicionar.TabIndex = 13;
-            this.btnAdicionar.Text = "Adicionar";
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
+			this.btnGravar.Location = new System.Drawing.Point(204, 296);
+            this.btnGravar.Name = "btnAdicionar";
+            this.btnGravar.Size = new System.Drawing.Size(75, 23);
+            this.btnGravar.TabIndex = 13;
+            this.btnGravar.Text = "Gravar";
+            this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.BtnGravar_Click);
             // 
             // btnCancelar
             // 
@@ -120,6 +120,7 @@
             this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+			this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // grbEndereco
             // 
@@ -280,7 +281,7 @@
             this.Controls.Add(this.lblDataNadcimento);
             this.Controls.Add(this.grbEndereco);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAdicionar);
+            this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.lblCpf);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.lblNome);
@@ -307,7 +308,7 @@
         private System.Windows.Forms.TextBox txtLougradouro;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox grbEndereco;
         private System.Windows.Forms.Label lblUf;

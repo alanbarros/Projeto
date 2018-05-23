@@ -25,6 +25,10 @@ namespace ProjetoFinal
             this.cliente.Remove(cliente);
         }
 
+		public bool BuscarCliente(Cliente cliente){
+			return this.Equals(cliente);
+		}
+
         public void EditarCliente(int posicao, Cliente cliente)
         {
             this.cliente[posicao] = cliente;

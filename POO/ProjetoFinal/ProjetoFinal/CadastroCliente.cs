@@ -19,10 +19,19 @@ namespace ProjetoFinal
             dao = new DAO();
         }
 
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            AdicionarNovo();
-        }
+		private void btnNovo_Click(object sender, EventArgs e)
+		{
+			AdicionarNovo();
+		}
+
+		private void listClientes_DoubleClick(object sender, EventArgs e){
+			EditarCliente();
+		}
+
+		void BtnBuscar_Click(object sender, EventArgs e){
+			MessageBox.Show("Clicado!");
+			Buscar(txtBuscar.ToString());
+		}
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
@@ -43,6 +52,21 @@ namespace ProjetoFinal
                 MessageBox.Show("Selecione um cliente antes!");
             }
         }
+
+        // Controlers
+        
+		void Buscar(string cpf){
+			Cliente cliente;
+			foreach(Cliente c in dao.cliente){
+				if(c.Equals(cpf)){
+					cliente = c;
+					MessageBox.Show("Encontrado!");
+					break;
+				}
+				MessageBox.Show("Não encontrado");
+			}
+
+		}
 
        private void AtualizarLista()
         {

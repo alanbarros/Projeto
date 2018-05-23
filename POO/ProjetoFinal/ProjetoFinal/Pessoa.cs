@@ -18,5 +18,21 @@ namespace ProjetoFinal
             this.Cpf = Cpf;
             this.DataNascimento = DataNascimento;
         }
-    }
+
+		public override bool Equals(object obj)
+		{
+			var cpf = obj as String;
+
+			if (cpf == null){
+				return false;
+			}
+
+			return Cpf.Equals(cpf);
+		}
+
+		public override int GetHashCode()
+		{
+			return Cpf.GetHashCode();
+		}
+	}
 }
