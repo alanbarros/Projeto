@@ -10,11 +10,13 @@ namespace ProjetoFinal
     {
         public string Nome { get; private set; }
         public string Cpf { get; private set; }
+        public DateTime DataNascimento { get; private set; }
 
-        public Pessoa(string Nome, string Cpf)
+        public Pessoa(string Nome, string Cpf, DateTime DataNascimento)
         {
             this.Nome = Nome;
             this.Cpf = Cpf;
+            this.DataNascimento = DataNascimento;
         }
     }
 }

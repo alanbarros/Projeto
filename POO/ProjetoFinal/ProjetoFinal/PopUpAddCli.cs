@@ -18,6 +18,7 @@ namespace ProjetoFinal
         public PopUpAddCli(DAO d)
         {
             InitializeComponent();
+            //mtxtDataNascimento.Mask = "00/00/0000";
             this.dao = d;
             this.posicao = -1;
         }
@@ -40,6 +41,8 @@ namespace ProjetoFinal
             txtNumero.Text = c.EnderecoDeEntrega.Numero.ToString();
             cmbUf.Text = c.EnderecoDeEntrega.Uf.ToString();
             txtCPF.Text = c.Cpf.ToString();
+            cmbStatus.Text = c.Status.ToString();
+            mtxtDataNascimento.Text = c.DataNascimento.ToString();
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -59,7 +62,8 @@ namespace ProjetoFinal
         private void AdicionarCliente()
         {
             Endereco e = new Endereco(txtLougradouro.Text, int.Parse(txtNumero.Text), txtBairro.Text, txtCidade.Text, int.Parse(txtCep.Text), cmbUf.Text);
-            Cliente c = new Cliente(txtNome.Text, txtCPF.Text, e);
+            DateTime d = new DateTime(long.Parse(mtxtDataNascimento.Text));
+            Cliente c = new Cliente(txtNome.Text, txtCPF.Text, d, e, cmbStatus.Text);
             dao.AdicionarCliente(c);
             this.Close();
         }
@@ -67,7 +71,8 @@ namespace ProjetoFinal
         private void EditarCliente()
         {
             Endereco e = new Endereco(txtLougradouro.Text, int.Parse(txtNumero.Text), txtBairro.Text, txtCidade.Text, int.Parse(txtCep.Text), cmbUf.Text);
-            Cliente c = new Cliente(txtNome.Text, txtCPF.Text, e);
+            DateTime d = new DateTime(long.Parse(mtxtDataNascimento.Text));
+            Cliente c = new Cliente(txtNome.Text, txtCPF.Text, d, e, cmbStatus.Text);
             dao.cliente[posicao] = c;
             this.Close();
         }

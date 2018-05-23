@@ -47,6 +47,10 @@
             this.lblBairro = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.lblNumero = new System.Windows.Forms.Label();
+            this.lblDataNadcimento = new System.Windows.Forms.Label();
+            this.mtxtDataNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.grbEndereco.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +67,7 @@
             // 
             this.txtCPF.Location = new System.Drawing.Point(82, 66);
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(100, 20);
+            this.txtCPF.Size = new System.Drawing.Size(161, 20);
             this.txtCPF.TabIndex = 11;
             // 
             // lblLougradouro
@@ -79,7 +83,7 @@
             // 
             this.txtLougradouro.Location = new System.Drawing.Point(82, 26);
             this.txtLougradouro.Name = "txtLougradouro";
-            this.txtLougradouro.Size = new System.Drawing.Size(253, 20);
+            this.txtLougradouro.Size = new System.Drawing.Size(267, 20);
             this.txtLougradouro.TabIndex = 9;
             // 
             // lblNome
@@ -95,7 +99,7 @@
             // 
             this.txtNome.Location = new System.Drawing.Point(82, 36);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.Size = new System.Drawing.Size(161, 20);
             this.txtNome.TabIndex = 7;
             // 
             // btnAdicionar
@@ -133,13 +137,14 @@
             this.grbEndereco.Controls.Add(this.txtLougradouro);
             this.grbEndereco.Location = new System.Drawing.Point(26, 144);
             this.grbEndereco.Name = "grbEndereco";
-            this.grbEndereco.Size = new System.Drawing.Size(341, 128);
+            this.grbEndereco.Size = new System.Drawing.Size(355, 128);
             this.grbEndereco.TabIndex = 15;
             this.grbEndereco.TabStop = false;
             this.grbEndereco.Text = "Endereço";
             // 
             // cmbUf
             // 
+            this.cmbUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUf.FormattingEnabled = true;
             this.cmbUf.Items.AddRange(new object[] {
             "SP",
@@ -149,15 +154,15 @@
             "MG",
             "DF",
             "RJ"});
-            this.cmbUf.Location = new System.Drawing.Point(303, 86);
+            this.cmbUf.Location = new System.Drawing.Point(312, 86);
             this.cmbUf.Name = "cmbUf";
-            this.cmbUf.Size = new System.Drawing.Size(32, 21);
+            this.cmbUf.Size = new System.Drawing.Size(37, 21);
             this.cmbUf.TabIndex = 20;
             // 
             // lblUf
             // 
             this.lblUf.AutoSize = true;
-            this.lblUf.Location = new System.Drawing.Point(272, 89);
+            this.lblUf.Location = new System.Drawing.Point(282, 89);
             this.lblUf.Name = "lblUf";
             this.lblUf.Size = new System.Drawing.Size(24, 13);
             this.lblUf.TabIndex = 19;
@@ -167,7 +172,7 @@
             // 
             this.txtCep.Location = new System.Drawing.Point(203, 86);
             this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(63, 20);
+            this.txtCep.Size = new System.Drawing.Size(73, 20);
             this.txtCep.TabIndex = 18;
             // 
             // lblCep
@@ -199,7 +204,7 @@
             // 
             this.txtBairro.Location = new System.Drawing.Point(212, 56);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(123, 20);
+            this.txtBairro.Size = new System.Drawing.Size(137, 20);
             this.txtBairro.TabIndex = 14;
             // 
             // lblBairro
@@ -227,11 +232,52 @@
             this.lblNumero.TabIndex = 11;
             this.lblNumero.Text = "Número:";
             // 
+            // lblDataNadcimento
+            // 
+            this.lblDataNadcimento.AutoSize = true;
+            this.lblDataNadcimento.Location = new System.Drawing.Point(26, 107);
+            this.lblDataNadcimento.Name = "lblDataNadcimento";
+            this.lblDataNadcimento.Size = new System.Drawing.Size(104, 13);
+            this.lblDataNadcimento.TabIndex = 16;
+            this.lblDataNadcimento.Text = "Data de Nascimento";
+            // 
+            // mtxtDataNascimento
+            // 
+            this.mtxtDataNascimento.Location = new System.Drawing.Point(136, 104);
+            this.mtxtDataNascimento.Name = "mtxtDataNascimento";
+            this.mtxtDataNascimento.Size = new System.Drawing.Size(107, 20);
+            this.mtxtDataNascimento.TabIndex = 17;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(243, 13);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(40, 13);
+            this.lblStatus.TabIndex = 18;
+            this.lblStatus.Text = "Status:";
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Ativo",
+            "Inativo"});
+            this.cmbStatus.Location = new System.Drawing.Point(289, 10);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(92, 21);
+            this.cmbStatus.TabIndex = 19;
+            // 
             // PopUpAddCli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 331);
+            this.ClientSize = new System.Drawing.Size(393, 331);
+            this.Controls.Add(this.cmbStatus);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.mtxtDataNascimento);
+            this.Controls.Add(this.lblDataNadcimento);
             this.Controls.Add(this.grbEndereco);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAdicionar);
@@ -274,5 +320,9 @@
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.ComboBox cmbUf;
+        private System.Windows.Forms.Label lblDataNadcimento;
+        private System.Windows.Forms.MaskedTextBox mtxtDataNascimento;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ComboBox cmbStatus;
     }
 }
