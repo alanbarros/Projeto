@@ -56,19 +56,19 @@
     <Compile Include="DAO.cs" />
     <Compile Include="Endereco.cs" />
     <Compile Include="Pessoa.cs" />
-    <Compile Include="PopUpAddCli.cs">
+    <Compile Include="FormCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUpAddCli.designer.cs">
-      <DependentUpon>PopUpAddCli.cs</DependentUpon>
+    <Compile Include="FormCliente.designer.cs">
+      <DependentUpon>FormCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CadastroCliente.resx">
       <DependentUpon>CadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUpAddCli.resx">
-      <DependentUpon>PopUpAddCli.cs</DependentUpon>
+    <EmbeddedResource Include="FormCliente.resx">
+      <DependentUpon>FormCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

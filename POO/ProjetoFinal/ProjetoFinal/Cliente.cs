@@ -9,12 +9,10 @@ namespace ProjetoFinal
     public class Cliente : Pessoa
     {
         public Endereco EnderecoDeEntrega { get; private set; }
-        public string Status { get; private set; }
 
-        public Cliente(string Nome, string Cpf, DateTime DataNascimento, Endereco EnderecoDeEntrega, string Status) : base(Nome, Cpf, DataNascimento)
+		public Cliente(string Nome, string Cpf, DateTime DataNascimento, Endereco EnderecoDeEntrega, StatusEnum Status) : base(Nome, Cpf, DataNascimento, Status)
         {
             this.EnderecoDeEntrega = EnderecoDeEntrega;
-            this.Status = Status;
         }
 
         public string ImprimaEndereco()

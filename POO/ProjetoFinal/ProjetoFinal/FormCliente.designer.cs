@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinal
 {
-    partial class PopUpAddCli
+    partial class FormCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -104,7 +104,7 @@
             // 
             // btnAdicionar
             // 
-			this.btnGravar.Location = new System.Drawing.Point(204, 296);
+            this.btnGravar.Location = new System.Drawing.Point(204, 296);
             this.btnGravar.Name = "btnAdicionar";
             this.btnGravar.Size = new System.Drawing.Size(75, 23);
             this.btnGravar.TabIndex = 13;
@@ -120,7 +120,7 @@
             this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-			this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // grbEndereco
             // 
@@ -262,9 +262,7 @@
             // 
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "Ativo",
-            "Inativo"});
+            this.cmbStatus.Items.AddRange(listaStatus.ToArray());
             this.cmbStatus.Location = new System.Drawing.Point(289, 10);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(92, 21);

@@ -76,7 +76,7 @@ namespace ProjetoFinal
 
         private void AdicionarNovo()
         {
-            PopUpAddCli popup = new PopUpAddCli(dao);
+            FormCliente popup = new FormCliente(dao);
             popup.ShowDialog();
             AtualizarLista();
         }
@@ -86,7 +86,7 @@ namespace ProjetoFinal
             int posicao = listClientes.SelectedIndex;
             if(posicao > -1)
             {
-                PopUpAddCli popup = new PopUpAddCli(dao, posicao);
+                FormCliente popup = new FormCliente(dao, posicao);
                 popup.ShowDialog();
                 AtualizarLista();
 
