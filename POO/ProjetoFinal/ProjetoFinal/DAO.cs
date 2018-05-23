@@ -20,18 +20,19 @@ namespace ProjetoFinal
             this.cliente.Add(cliente);
         }
 
-        public void RemoverCliente(Cliente cliente)
+        public bool RemoverCliente(Cliente cliente)
         {
-            this.cliente.Remove(cliente);
+			try{
+				this.cliente.Remove(cliente);
+				return true;
+			} catch{
+				return false;
+			}
         }
 
-		public bool BuscarCliente(Cliente cliente){
-			return this.Equals(cliente);
-		}
-
-        public void EditarCliente(int posicao, Cliente cliente)
+        public void EditarCliente(Cliente cliente)
         {
-            this.cliente[posicao] = cliente;
+			this.cliente[this.cliente.IndexOf(cliente)] = cliente;
         }
 
     }

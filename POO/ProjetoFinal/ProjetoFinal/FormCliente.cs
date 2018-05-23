@@ -13,42 +13,33 @@ namespace ProjetoFinal
     public partial class FormCliente : Form
     {
         DAO dao;
-        int posicao;
         DateTime dataNasc;
         Cliente cliente;
         List<string> listaStatus;
 
-        void ContrutorPadrao(DAO d, int p)
-        {
-            // Gerando Lista de strings para a Enum Status
+		public FormCliente(DAO d, Cliente c){
+			// Gerando Lista de strings para a Enum Status
             var s = Enum.GetValues(typeof(StatusEnum));
             listaStatus = new List<string>();
-            foreach(var x in s){
+            foreach (var x in s)
+            {
                 listaStatus.Add(x.ToString());
             }
-            
+
             InitializeComponent();
+
             this.dao = d;
-            this.posicao = p;
-            if (p > -1)
-            {
-                PreencheForm(d.cliente[posicao]);
-            }
-        }
+			int pos = d.cliente.IndexOf(c);
 
-        public FormCliente(DAO d)
-        {
-            ContrutorPadrao(d, -1);
-        }
-
-        public FormCliente(DAO d, int posicao)
-        {
-            ContrutorPadrao(d, posicao);
-        }
+			if(pos > -1){
+				PreencheForm(d.cliente[pos]);
+				cliente = d.cliente[pos];
+			}
+		}
         
         void BtnGravar_Click(object sender, EventArgs e)
         {
-            if (posicao > -1)
+			if (cliente != null)
             {
                 EditarCliente();
             }
@@ -102,7 +93,7 @@ namespace ProjetoFinal
          
             if(ConverterParaData(mtxtDataNascimento.Text))
             {
-                cliente = new Cliente(txtNome.Text, txtCPF.Text, dataNasc, e, Status);
+				cliente = new Cliente(txtNome.Text, txtCPF.Text, dataNasc, e, Status);
                 return true;
             } else
             {
@@ -113,7 +104,10 @@ namespace ProjetoFinal
 
         void AdicionarCliente()
         {
-            if(MontarCliente()){ // Chama a função MontarCliente e verificar se retorna true            
+			if (dao.cliente.Contains(new Cliente(txtCPF.Text)))
+            {
+				MessageBox.Show("Já existe um usuário com este CPF");
+			} else if(MontarCliente()){ // Chama a função MontarCliente e verificar se retorna true            
                 dao.AdicionarCliente(cliente); // Se der certo, adiciona um novo cliente
                 this.Close();
             }
@@ -123,7 +117,7 @@ namespace ProjetoFinal
         {         
             if (MontarCliente()) // Se conseguir montar a classe
             {            
-                dao.cliente[posicao] = cliente; // Atribui this cliente na posição de cliente dao
+				dao.EditarCliente(cliente); // Chama a função para editar o cliente atualizado
                 this.Close();
             }
         }

@@ -21,6 +21,8 @@ namespace ProjetoFinal
 			this.Status = Status;
         }
 
+		public Pessoa(){}
+
 		public Pessoa(string Cpf){
 			this.Cpf = Cpf;
 		}

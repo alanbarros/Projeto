@@ -1,121 +1,102 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetoFinal
 {
-    public partial class CadastroCliente : Form
-    {
-        DAO dao;
-        public CadastroCliente()
-        {
-            InitializeComponent();
-            dao = new DAO();
-        }
+	public partial class CadastroCliente : Form
+	{
+		DAO dao;
+		public CadastroCliente()
+		{
+			InitializeComponent();
+			dao = new DAO();
+		}
 
 		private void btnNovo_Click(object sender, EventArgs e)
 		{
 			AdicionarNovo();
 		}
 
-		private void listClientes_DoubleClick(object sender, EventArgs e){
+		private void listClientes_DoubleClick(object sender, EventArgs e)
+		{
 			EditarCliente(listClientes.SelectedIndex);
 		}
 
-		void BtnBuscar_Click(object sender, EventArgs e){
-			Buscar(txtBuscar.Text);
+		void BtnBuscar_Click(object sender, EventArgs e)
+		{         
+			Buscar(txtBuscar.Text);         
 		}
 
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            bool foi = ExcluirCliente();
+		void btnExcluir_Click(object sender, EventArgs e)
+		{
+			ExcluirCliente();
+		}
 
-            if (!foi)
-            {
-                MessageBox.Show("Selecione um cliente antes!");
-            }
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
+		private void btnEditar_Click(object sender, EventArgs e)
+		{
 			bool foi = EditarCliente(listClientes.SelectedIndex);
 
-            if (!foi)
-            {
-                MessageBox.Show("Selecione um cliente antes!");
-            }
-        }
+			if (!foi)
+			{
+				MessageBox.Show("Selecione um cliente antes!");
+			}
+		}
 
-        // Controlers
-        
-		void Buscar(string cpf){
+		// Controlers
 
+		void Buscar(string cpf)
+		{
 			if (dao.cliente.Count == 0)
 			{
 				MessageBox.Show("Não ha clientes");
 			}
-			else
+			else if (!EditarCliente(new Cliente(cpf)))
 			{
-				if (!EditarCliente(new Cliente(cpf)))
-				{
-					MessageBox.Show("Cliente não encontrado!");
-				}
+				MessageBox.Show("Cliente não encontrado!");
 			}
 		}
 
-       private void AtualizarLista()
-        {
-            listClientes.Items.Clear();
-            listClientes.Items.AddRange(this.dao.cliente.ToArray());
-        }
-
-        private void AdicionarNovo()
-        {
-            FormCliente popup = new FormCliente(dao);
-            popup.ShowDialog();
-            AtualizarLista();
-        }
-
-        private bool EditarCliente(int posicao)
-        {
-            if(posicao > -1)
-            {
-                FormCliente popup = new FormCliente(dao, posicao);
-                popup.ShowDialog();
-                AtualizarLista();
-
-                return true;
-            } 
-			return false;
-        }
-
-		bool EditarCliente(Cliente cliente){
-			int posicao = dao.cliente.IndexOf(cliente);
-			if(posicao > -1){
-				return EditarCliente(posicao);
-			}          
-			return false;         
+		private void AtualizarLista()
+		{
+			listClientes.Items.Clear();
+			listClientes.Items.AddRange(this.dao.cliente.ToArray());
 		}
 
-        private bool ExcluirCliente()
-        {
-            int posicao = listClientes.SelectedIndex;
-            if (posicao > -1)
-            {
-                dao.RemoverCliente(dao.cliente[posicao]);
+		private void AdicionarNovo()
+		{
+			FormCliente popup = new FormCliente(dao, new Cliente());
+			popup.ShowDialog();
+			AtualizarLista();
+		}
+
+		bool EditarCliente(int posicao)
+		{
+			if( posicao > -1){
+				FormCliente poup = new FormCliente(dao, dao.cliente[posicao]);            
+                poup.ShowDialog();
                 AtualizarLista();
-                return true;
+				return true;
+			}
+			return false;
+		}
+
+		bool EditarCliente(Cliente cliente)
+		{
+			int posicao = dao.cliente.IndexOf(cliente);
+			return EditarCliente(posicao);
+		}
+
+		void ExcluirCliente()
+		{
+			if (listClientes.SelectedIndex > -1)
+            {
+                dao.RemoverCliente(dao.cliente[listClientes.SelectedIndex]);
             }
             else
             {
-                return false;
+                MessageBox.Show("Selecione um cliente antes!");
             }
-        }
-    }
+		}
+        // Fim da Classe
+	}
 }

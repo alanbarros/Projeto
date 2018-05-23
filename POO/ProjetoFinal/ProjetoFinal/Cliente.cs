@@ -17,6 +17,8 @@ namespace ProjetoFinal
 
 		public Cliente(string Cpf) : base(Cpf){}
 
+		public Cliente(){}
+
         public string ImprimaEndereco()
         {
             return EnderecoDeEntrega.ToString();
