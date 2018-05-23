@@ -10,66 +10,113 @@ using System.Windows.Forms;
 
 namespace ProjetoFinal
 {
-    public partial class PopUpAddCli : Form
-    {
-        private DAO dao { get; set; }
-        private int posicao;
+	public partial class PopUpAddCli : Form
+	{
+		DAO dao;
+		int posicao;
+		DateTime dataNasc;
+		Cliente cliente;
 
-        public PopUpAddCli(DAO d)
+		void ContrutorPadrao(DAO d, int p)
+		{
+			InitializeComponent();
+			this.dao = d;
+			this.posicao = p;
+			if (p > -1)
+			{
+				PreencheForm(d.cliente[posicao]);
+			}
+		}
+
+		public PopUpAddCli(DAO d)
+		{
+			ContrutorPadrao(d, -1);
+		}
+
+		public PopUpAddCli(DAO d, int posicao)
+		{
+			ContrutorPadrao(d, posicao);
+		}
+        
+		void BtnGravar_Click(object sender, EventArgs e)
+		{
+			if (posicao > -1)
+			{
+				EditarCliente();
+			}
+			else
+			{
+				AdicionarCliente();
+			}
+		}
+
+		void BtnCancelar_Click(object sender, EventArgs e){
+			this.Close();
+		}
+
+		// Controladores
+
+        void PreencheForm(Cliente c) // Preence o formulário
         {
-            InitializeComponent();
-            this.dao = d;
-            this.posicao = -1;
+            txtNome.Text = c.Nome;
+            txtBairro.Text = c.EnderecoDeEntrega.Bairro;
+            txtCep.Text = c.EnderecoDeEntrega.Cep;
+            txtCidade.Text = c.EnderecoDeEntrega.Cidade;
+            txtLougradouro.Text = c.EnderecoDeEntrega.Lougradouro;
+            txtNumero.Text = c.EnderecoDeEntrega.Numero;
+            cmbUf.Text = c.EnderecoDeEntrega.Uf;
+            txtCPF.Text = c.Cpf;
+            cmbStatus.Text = c.Status;
+            mtxtDataNascimento.Text = c.DataNascimento.ToString("dd/MM/yyyy");
         }
 
-        public PopUpAddCli(DAO d, int posicao)
-        {
-            InitializeComponent();
-            this.dao = d;
-            this.posicao = posicao;
-            PreencheForm(d.cliente[posicao]);
-        }
+		bool ConverterParaData(string texto) // Define a variavel dataNasc convertendo de string
+		{
+			DateTime dataConvertida;
+			try
+			{
+				dataConvertida = Convert.ToDateTime(texto);
+				dataNasc = dataConvertida;
+				return true;
+			}
+			catch (FormatException)
+			{
+				return false;
+			}
+		}
 
-        private void PreencheForm(Cliente c)
-        {
-            txtNome.Text = c.Nome.ToString();
-            txtBairro.Text = c.EnderecoDeEntrega.Bairro.ToString();
-            txtCep.Text = c.EnderecoDeEntrega.Cep.ToString();
-            txtCidade.Text = c.EnderecoDeEntrega.Cidade.ToString();
-            txtLougradouro.Text = c.EnderecoDeEntrega.Lougradouro.ToString();
-            txtNumero.Text = c.EnderecoDeEntrega.Numero.ToString();
-            cmbUf.Text = c.EnderecoDeEntrega.Uf.ToString();
-            txtCPF.Text = c.Cpf.ToString();
-        }
+		bool MontarCliente() // Atribui o valor da variavel cliente
+		{
+			Endereco e = new Endereco(txtLougradouro.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, txtCep.Text, cmbUf.Text);
+         
+			if(ConverterParaData(mtxtDataNascimento.Text))
+			{
+				cliente = new Cliente(txtNome.Text, txtCPF.Text, dataNasc, e, cmbStatus.Text);
+				return true;
+			} else
+			{
+				MessageBox.Show("Verifique a data");
+				return false;
+			}
+		}
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
-        {
-            if (posicao > -1)
-            {
-                EditarCliente();
+		void AdicionarCliente()
+		{
+			if(MontarCliente()){ // Chama a função MontarCliente e verificar se retorna true            
+                dao.AdicionarCliente(cliente); // Se der certo, adiciona um novo cliente
+                this.Close();
+			}
+		}
+        
+		void EditarCliente()
+		{         
+			if (MontarCliente()) // Se conseguir montar a classe
+            {            
+                dao.cliente[posicao] = cliente; // Atribui this cliente na posição de cliente dao
+                this.Close();
             }
-            else
-            {
-                AdicionarCliente();
-            }
-        }
+		}
 
-        // Controladores
-
-        private void AdicionarCliente()
-        {
-            Endereco e = new Endereco(txtLougradouro.Text, int.Parse(txtNumero.Text), txtBairro.Text, txtCidade.Text, int.Parse(txtCep.Text), cmbUf.Text);
-            Cliente c = new Cliente(txtNome.Text, txtCPF.Text, e);
-            dao.AdicionarCliente(c);
-            this.Close();
-        }
-
-        private void EditarCliente()
-        {
-            Endereco e = new Endereco(txtLougradouro.Text, int.Parse(txtNumero.Text), txtBairro.Text, txtCidade.Text, int.Parse(txtCep.Text), cmbUf.Text);
-            Cliente c = new Cliente(txtNome.Text, txtCPF.Text, e);
-            dao.cliente[posicao] = c;
-            this.Close();
-        }
-    }
+        // Fim da classe
+	}
 }
