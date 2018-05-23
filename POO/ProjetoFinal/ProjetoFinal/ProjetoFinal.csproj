@@ -54,29 +54,21 @@
     </Compile>
     <Compile Include="Cliente.cs" />
     <Compile Include="DAO.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Endereco.cs" />
     <Compile Include="Pessoa.cs" />
-    <Compile Include="PopUpCliente.cs">
+    <Compile Include="PopUpAddCli.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUpCliente.Designer.cs">
-      <DependentUpon>PopUpCliente.cs</DependentUpon>
+    <Compile Include="PopUpAddCli.designer.cs">
+      <DependentUpon>PopUpAddCli.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CadastroCliente.resx">
       <DependentUpon>CadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUpCliente.resx">
-      <DependentUpon>PopUpCliente.cs</DependentUpon>
+    <EmbeddedResource Include="PopUpAddCli.resx">
+      <DependentUpon>PopUpAddCli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

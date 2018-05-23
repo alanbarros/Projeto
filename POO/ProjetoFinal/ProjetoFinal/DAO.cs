@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoFinal
 {
-    class DAO
+    public class DAO
     {
         public List<Cliente> cliente;
 

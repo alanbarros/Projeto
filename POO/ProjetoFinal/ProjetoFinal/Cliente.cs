@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace ProjetoFinal
 {
-    class Cliente : Pessoa
+    public class Cliente : Pessoa
     {
-        public string EnderecoDeEntrega { get; private set; }
+        public Endereco EnderecoDeEntrega { get; private set; }
 
-        public Cliente(string Nome, string Cpf, string EnderecoDeEntrega) : base(Nome, Cpf)
+        public Cliente(string Nome, string Cpf, Endereco EnderecoDeEntrega) : base(Nome, Cpf)
         {
             this.EnderecoDeEntrega = EnderecoDeEntrega;
         }
 
         public string ImprimaEndereco()
         {
-            return EnderecoDeEntrega;
+            return EnderecoDeEntrega.ToString();
         }
 
         public override string ToString()

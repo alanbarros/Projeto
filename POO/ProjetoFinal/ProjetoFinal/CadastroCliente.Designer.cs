@@ -31,6 +31,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.listClientes = new System.Windows.Forms.ListBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@
             this.btnNovo.TabIndex = 1;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnEditar
             // 
@@ -60,15 +62,25 @@
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // listClientes
+            // 
+            this.listClientes.FormattingEnabled = true;
+            this.listClientes.Location = new System.Drawing.Point(28, 119);
+            this.listClientes.Name = "listClientes";
+            this.listClientes.Size = new System.Drawing.Size(183, 134);
+            this.listClientes.TabIndex = 4;
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(319, 27);
+            this.btnExcluir.Location = new System.Drawing.Point(327, 27);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 3;
+            this.btnExcluir.TabIndex = 5;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // CadastroCliente
             // 
@@ -76,6 +88,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 347);
             this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.listClientes);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnBuscar);
@@ -90,6 +103,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.ListBox listClientes;
         private System.Windows.Forms.Button btnExcluir;
     }
 }
