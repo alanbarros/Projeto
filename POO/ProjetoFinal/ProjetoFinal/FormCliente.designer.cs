@@ -102,10 +102,10 @@
             this.txtNome.Size = new System.Drawing.Size(161, 20);
             this.txtNome.TabIndex = 7;
             // 
-            // btnAdicionar
+            // btnGravar
             // 
             this.btnGravar.Location = new System.Drawing.Point(204, 296);
-            this.btnGravar.Name = "btnAdicionar";
+            this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(75, 23);
             this.btnGravar.TabIndex = 13;
             this.btnGravar.Text = "Gravar";
@@ -262,13 +262,16 @@
             // 
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(listaStatus.ToArray());
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Inativo",
+            "Ativo",
+            "Bloqueado"});
             this.cmbStatus.Location = new System.Drawing.Point(289, 10);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(92, 21);
             this.cmbStatus.TabIndex = 19;
             // 
-            // PopUpAddCli
+            // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -284,7 +287,7 @@
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txtNome);
-            this.Name = "PopUpAddCli";
+            this.Name = "FormCliente";
             this.Text = "PopUpAddCli";
             this.grbEndereco.ResumeLayout(false);
             this.grbEndereco.PerformLayout();

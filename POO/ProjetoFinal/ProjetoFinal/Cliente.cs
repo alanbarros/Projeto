@@ -10,7 +10,7 @@ namespace ProjetoFinal
     {
         public Endereco EnderecoDeEntrega { get; private set; }
 
-		public Cliente(string Nome, string Cpf, DateTime DataNascimento, Endereco EnderecoDeEntrega, StatusEnum Status) : base(Nome, Cpf, DataNascimento, Status)
+		public Cliente(string Nome, string Cpf, DateTime DataNascimento, Endereco EnderecoDeEntrega, string Status) : base(Nome, Cpf, DataNascimento, Status)
         {
             this.EnderecoDeEntrega = EnderecoDeEntrega;
         }

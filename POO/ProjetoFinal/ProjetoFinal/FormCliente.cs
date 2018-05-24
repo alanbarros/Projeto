@@ -18,14 +18,6 @@ namespace ProjetoFinal
         List<string> listaStatus;
 
 		public FormCliente(DAO d, Cliente c){
-			// Gerando Lista de strings para a Enum Status
-            var s = Enum.GetValues(typeof(StatusEnum));
-            listaStatus = new List<string>();
-            foreach (var x in s)
-            {
-                listaStatus.Add(x.ToString());
-            }
-
             InitializeComponent();
 
             this.dao = d;
@@ -101,8 +93,7 @@ namespace ProjetoFinal
 
 			try{
 				Endereco e = new Endereco(txtLougradouro.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, txtCep.Text, cmbUf.Text);
-				Enum.TryParse(cmbStatus.Text, out StatusEnum Status); // Convertendo string do combobox para enum
-				cliente = new Cliente(txtNome.Text, txtCPF.Text, dataNasc, e, Status);	
+				cliente = new Cliente(txtNome.Text, txtCPF.Text, dataNasc, e, cmbStatus.Text);	
 			} catch (FormatException) {
 				return 0; // Erro desconhecido
 			}

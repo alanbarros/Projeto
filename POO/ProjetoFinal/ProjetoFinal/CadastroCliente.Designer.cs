@@ -33,22 +33,23 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.listClientes = new System.Windows.Forms.ListBox();
             this.btnExcluir = new System.Windows.Forms.Button();
-			this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(28, 27);
+            this.btnBuscar.Location = new System.Drawing.Point(465, 20);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
-			this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(123, 27);
+            this.btnNovo.Location = new System.Drawing.Point(28, 22);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(75, 23);
             this.btnNovo.TabIndex = 1;
@@ -58,7 +59,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(222, 27);
+            this.btnEditar.Location = new System.Drawing.Point(115, 22);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 2;
@@ -73,11 +74,11 @@
             this.listClientes.Name = "listClientes";
             this.listClientes.Size = new System.Drawing.Size(183, 134);
             this.listClientes.TabIndex = 4;
-			this.listClientes.DoubleClick += new System.EventHandler(this.listClientes_DoubleClick);
+            this.listClientes.DoubleClick += new System.EventHandler(this.listClientes_DoubleClick);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(327, 27);
+            this.btnExcluir.Location = new System.Drawing.Point(202, 22);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 5;
@@ -85,27 +86,38 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(355, 22);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(104, 20);
+            this.txtBuscar.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(319, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "CPF:";
+            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 347);
+            this.ClientSize = new System.Drawing.Size(552, 347);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.listClientes);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnBuscar);
-			this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.txtBuscar);
             this.Name = "CadastroCliente";
             this.Text = "CadastroCliente";
             this.ResumeLayout(false);
-			// 
-            // txtBuscar
-            // 
-			this.txtBuscar.Location = new System.Drawing.Point(35, 80);
-			this.txtBuscar.Name = "txtNumero";
-			this.txtBuscar.Size = new System.Drawing.Size(104, 20);
-			this.txtBuscar.TabIndex = 12;
+            this.PerformLayout();
 
         }
 
@@ -117,5 +129,6 @@
         private System.Windows.Forms.ListBox listClientes;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -11,9 +11,9 @@ namespace ProjetoFinal
         public string Nome { get; private set; }
         public string Cpf { get; private set; }
         public DateTime DataNascimento { get; private set; }
-		public StatusEnum Status { get; private set; }
+		public string Status { get; private set; }
 
-		public Pessoa(string Nome, string Cpf, DateTime DataNascimento, StatusEnum Status)
+		public Pessoa(string Nome, string Cpf, DateTime DataNascimento, string Status)
         {
             this.Nome = Nome;
             this.Cpf = Cpf;

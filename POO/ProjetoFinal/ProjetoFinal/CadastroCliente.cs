@@ -37,9 +37,14 @@ namespace ProjetoFinal
 		}
 
 		void btnEditar_Click(object sender, EventArgs e)
-		{         
-			if (!EditarCliente(dao.cliente[listClientes.SelectedIndex]))
-				MessageBox.Show("Selecione um cliente antes!");
+		{
+            bool result = listClientes.SelectedIndex > -1 ? true : false; // Verifica se selecionou algum item na lista
+            if (result) EditarCliente(dao.cliente[listClientes.SelectedIndex]); // Se tiver algum item selecionado, chama a função
+            else
+            {
+                MessageBox.Show("Selecione um cliente antes!"); 
+            }
+            
 		}
 
 		// Controlers
