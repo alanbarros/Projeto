@@ -41,11 +41,11 @@ namespace ProjetoFinal
         {
 			if (cliente != null)
             {
-                EditarCliente();
+				MessageBox.Show(EditarCliente().ToString());
             }
             else
             {
-                AdicionarCliente();
+				MessageBox.Show(AdicionarCliente().ToString());
             }
         }
 
@@ -84,42 +84,54 @@ namespace ProjetoFinal
             }
         }
 
-        bool MontarCliente() // Atribui o valor da variavel cliente
-        {
-			Endereco e = new Endereco(txtLougradouro.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, txtCep.Text, cmbUf.Text);
-				
-            // Convertendo string do combobox para enum
-            Enum.TryParse(cmbStatus.Text, out StatusEnum Status);
-         
-            if(ConverterParaData(mtxtDataNascimento.Text))
-            {
-				cliente = new Cliente(txtNome.Text, txtCPF.Text, dataNasc, e, Status);
-                return true;
-            } else
-            {
-                MessageBox.Show("Verifique a data");
-                return false;
-            }
-        }
+		int MontarCliente() // retorna 1 se montar cliente com sucesso.
+		{         
+			if (ConfereData() == 0) return -1; // Se não conseguir converter a data;
+			if (txtNome.Text == null) return -2; // Se o nome for nulo
+			if (ConfereCpf() == -1) return -3; // Se o CPF estiver vazio
 
-        void AdicionarCliente()
-        {
-			if (dao.cliente.Contains(new Cliente(txtCPF.Text)))
-            {
-				MessageBox.Show("Já existe um usuário com este CPF");
-			} else if(MontarCliente()){ // Chama a função MontarCliente e verificar se retorna true            
-                dao.AdicionarCliente(cliente); // Se der certo, adiciona um novo cliente
-                this.Close();
-            }
+			try{
+				Endereco e = new Endereco(txtLougradouro.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, txtCep.Text, cmbUf.Text);
+				Enum.TryParse(cmbStatus.Text, out StatusEnum Status); // Convertendo string do combobox para enum
+				cliente = new Cliente(txtNome.Text, txtCPF.Text, dataNasc, e, Status);	
+			} catch {
+				return 0; // Erro desconhecido
+			}
+            
+			return 1; // Se tudo der certo;
+		}
+
+		int ConfereCpf(){
+			if(txtCPF == null) return -1; // Se o campo CPF for nulo, retorna -1
+			return dao.cliente.Contains(new Cliente(txtCPF.Text)) ? 1 : 0; // Se já exite cpf, retorna 0 se não retorna 1
+		}
+
+		int ConfereData(){
+			if (mtxtDataNascimento != null) return -1; // Se a data não for digitada, retorna -1
+			return ConverterParaData(mtxtDataNascimento.Text) ? 1 : 0; // Se conseguir converter em data retorna 1, se não retorna 0;
+		}
+        
+		int AdicionarCliente(){
+			int criacaoCliente = MontarCliente();
+			int cpfNovo = ConfereCpf();
+			if(criacaoCliente == 1 && cpfNovo == 1){
+                dao.AdicionarCliente(cliente); // Adiciona um novo cliente
+                Close();
+				return criacaoCliente;
+			}
+			return criacaoCliente == 1 ? 10 : criacaoCliente; // Retorna erro cpf caso cliente estiver ok, e retorna erro cliente caso contrario;
         }
         
-        void EditarCliente()
-        {         
-            if (MontarCliente()) // Se conseguir montar a classe
+        int EditarCliente(){
+			int criacaoCliente = MontarCliente();
+
+			if (criacaoCliente == 1) // Se conseguir montar a o objeto cliente
             {            
 				dao.EditarCliente(cliente); // Chama a função para editar o cliente atualizado
-                this.Close();
-            }
+                Close();
+			}
+
+			return criacaoCliente;
         }
 
         // Fim da classe
