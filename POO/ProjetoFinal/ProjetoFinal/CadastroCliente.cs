@@ -12,91 +12,72 @@ namespace ProjetoFinal
 			dao = new DAO();
 		}
 
-		private void btnNovo_Click(object sender, EventArgs e)
+		void btnNovo_Click(object sender, EventArgs e)
 		{
 			AdicionarNovo();
 		}
 
-		private void listClientes_DoubleClick(object sender, EventArgs e)
+		void listClientes_DoubleClick(object sender, EventArgs e)
 		{
-			EditarCliente(listClientes.SelectedIndex);
+			bool result = listClientes.SelectedIndex > -1 ? true : false; // Verifica se selecionou algum item na lista
+			if (result) EditarCliente(dao.cliente[listClientes.SelectedIndex]); // Se tiver algum item selecionado, chama a função
 		}
 
 		void BtnBuscar_Click(object sender, EventArgs e)
-		{         
-			Buscar(txtBuscar.Text);         
+		{
+			if (!EditarCliente(new Cliente(txtBuscar.Text))){
+				MessageBox.Show("Cliente não localizado");
+			}        
 		}
 
 		void btnExcluir_Click(object sender, EventArgs e)
 		{
-			ExcluirCliente();
+			if(!ExcluirCliente(dao.cliente[listClientes.SelectedIndex]))
+				MessageBox.Show("Selecione antes um cliente");
 		}
 
-		private void btnEditar_Click(object sender, EventArgs e)
-		{
-			bool foi = EditarCliente(listClientes.SelectedIndex);
-
-			if (!foi)
-			{
+		void btnEditar_Click(object sender, EventArgs e)
+		{         
+			if (!EditarCliente(dao.cliente[listClientes.SelectedIndex]))
 				MessageBox.Show("Selecione um cliente antes!");
-			}
 		}
 
 		// Controlers
 
-		void Buscar(string cpf)
-		{
-			if (dao.cliente.Count == 0)
-			{
-				MessageBox.Show("Não ha clientes");
-			}
-			else if (!EditarCliente(new Cliente(cpf)))
-			{
-				MessageBox.Show("Cliente não encontrado!");
-			}
-		}
-
-		private void AtualizarLista()
+		void AtualizarLista()
 		{
 			listClientes.Items.Clear();
 			listClientes.Items.AddRange(this.dao.cliente.ToArray());
 		}
 
-		private void AdicionarNovo()
+		void AdicionarNovo()
 		{
 			FormCliente popup = new FormCliente(dao, new Cliente());
 			popup.ShowDialog();
 			AtualizarLista();
 		}
 
-		bool EditarCliente(int posicao)
+		bool EditarCliente(Cliente cliente)
 		{
-			if( posicao > -1){
-				FormCliente poup = new FormCliente(dao, dao.cliente[posicao]);            
-                poup.ShowDialog();
-                AtualizarLista();
+			if(dao.cliente.Contains(cliente)){
+				FormCliente editCli = new FormCliente(dao, cliente);
+				editCli.ShowDialog();
+				AtualizarLista();
 				return true;
 			}
+			return false;         
+		}
+
+		bool ExcluirCliente(Cliente cliente)
+		{
+			if (dao.cliente.Contains(cliente)){
+				dao.RemoverCliente(cliente);
+				AtualizarLista();
+				return true;
+            }
 			return false;
 		}
 
-		bool EditarCliente(Cliente cliente)
-		{
-			int posicao = dao.cliente.IndexOf(cliente);
-			return EditarCliente(posicao);
-		}
-
-		void ExcluirCliente()
-		{
-			if (listClientes.SelectedIndex > -1)
-            {
-                dao.RemoverCliente(dao.cliente[listClientes.SelectedIndex]);
-            }
-            else
-            {
-                MessageBox.Show("Selecione um cliente antes!");
-            }
-		}
         // Fim da Classe
 	}
 }

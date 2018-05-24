@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{D16BC64B-716F-42F7-AC31-945CE3D72FE9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProjetoFinal/FormCliente.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProjetoFinal/CadastroCliente.Designer.cs">
     <Files>
-      <File FileName="ProjetoFinal/CadastroCliente.cs" Line="21" Column="4" />
+      <File FileName="ProjetoFinal/CadastroCliente.cs" Line="20" Column="27" />
       <File FileName="ProjetoFinal/Pessoa.cs" Line="24" Column="20" />
       <File FileName="ProjetoFinal/Cliente.cs" Line="21" Column="3" />
       <File FileName="ProjetoFinal/DAO.cs" Line="35" Column="58" />
-      <File FileName="ProjetoFinal/FormCliente.cs" Line="120" Column="27" />
+      <File FileName="ProjetoFinal/FormCliente.cs" Line="78" Column="116" />
+      <File FileName="ProjetoFinal/CadastroCliente.Designer.cs" Line="76" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

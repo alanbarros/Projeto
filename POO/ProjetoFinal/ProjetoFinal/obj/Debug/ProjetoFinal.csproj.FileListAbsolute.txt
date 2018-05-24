@@ -23,7 +23,6 @@ C:/Users/CT Noite/Documents/Charlie Alfa India Oscar - Season 2/POO/Senai/POO/Pr
 /home/alanbarros/Downloads/repositorio/POO/ProjetoFinal/ProjetoFinal/bin/Debug/ProjetoFinal.pdb
 /home/alanbarros/Downloads/repositorio/POO/ProjetoFinal/ProjetoFinal/obj/Debug/ProjetoFinal.csprojResolveAssemblyReference.cache
 /home/alanbarros/Downloads/repositorio/POO/ProjetoFinal/ProjetoFinal/obj/Debug/ProjetoFinal.CadastroCliente.resources
-/home/alanbarros/Downloads/repositorio/POO/ProjetoFinal/ProjetoFinal/obj/Debug/ProjetoFinal.PopUpAddCli.resources
 /home/alanbarros/Downloads/repositorio/POO/ProjetoFinal/ProjetoFinal/obj/Debug/ProjetoFinal.Properties.Resources.resources
 /home/alanbarros/Downloads/repositorio/POO/ProjetoFinal/ProjetoFinal/obj/Debug/ProjetoFinal.csproj.GenerateResource.cache
 /home/alanbarros/Downloads/repositorio/POO/ProjetoFinal/ProjetoFinal/obj/Debug/ProjetoFinal.csproj.CoreCompileInputs.cache
@@ -40,3 +39,4 @@ C:/Users/CT Noite/Documents/Charlie Alfa India Oscar - Season 2/POO/Senai/POO/Pr
 /home/alan/Documentos/Estudo/Senai/POO/ProjetoFinalWindowsForm/ProjetoFinal1Semestre/POO/ProjetoFinal/ProjetoFinal/obj/Debug/ProjetoFinal.exe
 /home/alan/Documentos/Estudo/Senai/POO/ProjetoFinalWindowsForm/ProjetoFinal1Semestre/POO/ProjetoFinal/ProjetoFinal/obj/Debug/ProjetoFinal.pdb
 /home/alan/Documentos/Estudo/Senai/POO/ProjetoFinalWindowsForm/ProjetoFinal1Semestre/POO/ProjetoFinal/ProjetoFinal/obj/Debug/ProjetoFinal.FormCliente.resources
+/home/alanbarros/Downloads/repositorio/POO/ProjetoFinal/ProjetoFinal/obj/Debug/ProjetoFinal.FormCliente.resources
