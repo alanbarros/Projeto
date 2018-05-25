@@ -30,5 +30,11 @@ namespace ProjetoFinal
             var cadProd = new CadastroProduto(dao);
             cadProd.ShowDialog();
         }
+
+		void btnVenda_Click(object sender, EventArgs e)
+        {
+			var cadVenda = new CadastroVenda(dao);
+			cadVenda.ShowDialog();
+        }
     }
 }

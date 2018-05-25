@@ -56,7 +56,7 @@
             this.btnNovo.TabIndex = 1;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            this.btnNovo.Click += new System.EventHandler(this.BtnNovo_Click);
             // 
             // btnEditar
             // 
@@ -66,7 +66,7 @@
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -76,7 +76,7 @@
             this.btnExcluir.TabIndex = 5;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // txtBuscar
             // 
@@ -101,8 +101,7 @@
             this.dgCliente.Name = "dgCliente";
             this.dgCliente.Size = new System.Drawing.Size(526, 275);
             this.dgCliente.TabIndex = 14;
-			this.dgCliente.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgCliente_RowHeaderMouseDoubleClick);
-            // 
+			// 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

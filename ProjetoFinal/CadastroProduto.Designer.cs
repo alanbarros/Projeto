@@ -36,9 +36,6 @@
             this.lblBuscarProduto = new System.Windows.Forms.Label();
             this.btnBuscarProduto = new System.Windows.Forms.Button();
             this.dataGriProduto = new System.Windows.Forms.DataGridView();
-            this.dAOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGriProduto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dAOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNovoProduto
@@ -98,15 +95,11 @@
             // 
             this.dataGriProduto.AutoGenerateColumns = false;
             this.dataGriProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGriProduto.DataSource = this.dAOBindingSource;
             this.dataGriProduto.Location = new System.Drawing.Point(12, 60);
             this.dataGriProduto.Name = "dataGriProduto";
             this.dataGriProduto.Size = new System.Drawing.Size(528, 275);
             this.dataGriProduto.TabIndex = 16;
             // 
-            // dAOBindingSource
-            // 
-            this.dAOBindingSource.DataSource = typeof(ProjetoFinal.DAO);
             // 
             // CadastroProduto
             // 
@@ -122,8 +115,6 @@
             this.Controls.Add(this.btnNovoProduto);
             this.Name = "CadastroProduto";
             this.Text = "Cadastro de Produtos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGriProduto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dAOBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,7 +128,5 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label lblBuscarProduto;
         private System.Windows.Forms.Button btnBuscarProduto;
-        private System.Windows.Forms.DataGridView dataGriProduto;
-        private System.Windows.Forms.BindingSource dAOBindingSource;
-    }
+        private System.Windows.Forms.DataGridView dataGriProduto;    }
 }

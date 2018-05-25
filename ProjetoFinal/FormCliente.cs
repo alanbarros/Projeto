@@ -149,7 +149,7 @@ namespace ProjetoFinal
 
 			if (criacaoCliente == 1) // Se conseguir montar a o objeto cliente
 			{
-				dao.EditarCliente(cliente); // Chama a função para editar o cliente atualizado
+				dao.RedefinirCliente(cliente); // Chama a função para editar o cliente atualizado
 				Close();
 			}
 

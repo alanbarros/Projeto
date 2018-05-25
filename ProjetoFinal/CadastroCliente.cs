@@ -10,50 +10,52 @@ namespace ProjetoFinal
 		{
 			InitializeComponent();
             dao = d;
+			AtualizaGridView();
 		}
 
-		void btnNovo_Click(object sender, EventArgs e)
+		void BtnNovo_Click(object sender, EventArgs e)
 		{
-			AdicionarNovo();
-		}
-
-		void listClientes_DoubleClick(object sender, EventArgs e)
-		{
-			bool result = dgCliente.CurrentCell.RowIndex > -1; // Verifica se selecionou algum item na lista
-			if (result) EditarCliente(dao.cliente[dgCliente.CurrentCell.RowIndex]); // Se tiver algum item selecionado, chama a função
+			TelaAdicionar(new Cliente());
 		}
 
 		void BtnBuscar_Click(object sender, EventArgs e)
 		{
-			if (!EditarCliente(new Cliente(txtBuscar.Text))){
+			if (!TelaEditar(new Cliente(txtBuscar.Text)))
 				MessageBox.Show("Cliente não localizado");
-			}        
+			else 
+				AtualizaGridView();
 		}
 
-		void btnExcluir_Click(object sender, EventArgs e)
-		{
-			if(!ExcluirCliente(dao.cliente[dgCliente.CurrentCell.RowIndex]))
+		void BtnExcluir_Click(object sender, EventArgs e)
+		{         
+			if (GridLinha() > -1)
+    			if(dao.RemoverCliente(dao.cliente[GridLinha()])) AtualizaGridView();
+			else
 				MessageBox.Show("Selecione antes um cliente");
 		}
 
-		void btnEditar_Click(object sender, EventArgs e)
+		void BtnEditar_Click(object sender, EventArgs e)
 		{
-            bool result = dgCliente.CurrentCell.RowIndex > -1; // Verifica se selecionou algum item na lista
-            if (result) EditarCliente(dao.cliente[dgCliente.CurrentCell.RowIndex]); // Se tiver algum item selecionado, chama a função
-            else
-            {
-                MessageBox.Show("Selecione um cliente antes!"); 
-            }
-            
+			if (GridLinha() > -1)
+				TelaEditar(dao.cliente[dgCliente.CurrentCell.RowIndex]); // Se tiver algum item selecionado, chama a função
+			else
+				MessageBox.Show("Selecione um item antes");   
 		}
 
 		// Controlers
 
-        void PreencheGrid()
+		void AtualizaGridView()
         {
             dgCliente.Rows.Clear();
+			dgCliente.AllowUserToAddRows = false;
+			dgCliente.AllowDrop = false;
+			dgCliente.AllowUserToDeleteRows = false;
+			dgCliente.AllowUserToResizeColumns = false;
+			dgCliente.AllowUserToResizeRows = false;
 
             dgCliente.ColumnCount = 4;
+			dgCliente.Columns[0].Width = 200;         
+            dgCliente.Columns[2].Width = 180;
             dgCliente.Columns[0].Name = "Nome";
             dgCliente.Columns[1].Name = "Idade";
             dgCliente.Columns[2].Name = "CPF";
@@ -63,50 +65,31 @@ namespace ProjetoFinal
             {
 				string[] row = { c.Nome, c.Idade().ToString(), c.Cpf, c.Status };
                 dgCliente.Rows.Add(row);
-            }
+            }         
+        }      
 
-            
-
+        int GridLinha()
+        {  // Verifica se selecionou algum item na grid       
+			try { return dgCliente.CurrentCell.RowIndex; }
+			catch { return -1; }
         }
 
-        void AtualizarLista()
+		void TelaAdicionar(Cliente cliente)
 		{
-            PreencheGrid();
-		}
-
-		void AdicionarNovo()
-		{
-			var popup = new FormCliente(dao, new Cliente());
+			var popup = new FormCliente(dao, cliente);
 			popup.ShowDialog();
-			AtualizarLista();
+			AtualizaGridView();
 		}
 
-		bool EditarCliente(Cliente cliente)
+		bool TelaEditar(Cliente cliente)
 		{
 			if(dao.cliente.Contains(cliente)){
 				var editCli = new FormCliente(dao, cliente);
 				editCli.ShowDialog();
-				AtualizarLista();
+				AtualizaGridView();
 				return true;
 			}
 			return false;         
 		}
-
-		bool ExcluirCliente(Cliente cliente)
-		{
-			if (dao.cliente.Contains(cliente)){
-				dao.RemoverCliente(cliente);
-				AtualizarLista();
-				return true;
-            }
-			return false;
-		}
-
-		void dgCliente_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-			MessageBox.Show("Oi00");
-        }
-
-        // Fim da Classe
     }
 }

@@ -12,8 +12,10 @@ namespace ProjetoFinal
 {
     public partial class CadastroVenda : Form
     {
-        public CadastroVenda()
+		DAO dao;
+		public CadastroVenda(DAO d)
         {
+			dao = d;
             InitializeComponent();
         }
     }

@@ -34,8 +34,8 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.listClientes = new System.Windows.Forms.ListBox();
-            this.SuspendLayout();
+			this.dataGridVenda = new System.Windows.Forms.DataGridView();
+			this.SuspendLayout();
             // 
             // label1
             // 
@@ -88,23 +88,25 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(104, 20);
             this.txtBuscar.TabIndex = 18;
+			// 
+			// dataGridVenda
             // 
-            // listClientes
+            this.dataGridVenda.AutoGenerateColumns = false;
+			this.dataGridVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridVenda.Location = new System.Drawing.Point(12, 60);
+			this.dataGridVenda.Name = "dataGriProduto";
+			this.dataGridVenda.Size = new System.Drawing.Size(528, 275);
+			this.dataGridVenda.TabIndex = 16;
             // 
-            this.listClientes.FormattingEnabled = true;
-            this.listClientes.Location = new System.Drawing.Point(28, 119);
-            this.listClientes.Name = "listClientes";
-            this.listClientes.Size = new System.Drawing.Size(183, 134);
-            this.listClientes.TabIndex = 20;
             // 
             // CadastroVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 347);
-            this.Controls.Add(this.listClientes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExcluir);
+			this.Controls.Add(this.dataGridVenda);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnBuscar);
@@ -124,6 +126,6 @@
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.ListBox listClientes;
+		private System.Windows.Forms.DataGridView dataGridVenda;
     }
 }

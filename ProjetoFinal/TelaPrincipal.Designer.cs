@@ -51,6 +51,7 @@
             this.btnVenda.TabIndex = 1;
             this.btnVenda.Text = "Efetuar Venda";
             this.btnVenda.UseVisualStyleBackColor = true;
+			this.btnVenda.Click += new System.EventHandler(this.btnVenda_Click);
             // 
             // btnProduto
             // 

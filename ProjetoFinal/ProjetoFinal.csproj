@@ -84,6 +84,18 @@
     <Compile Include="FormCliente.designer.cs">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadastroVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroVenda.Designer.cs">
+      <DependentUpon>CadastroVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVenda.Designer.cs">
+      <DependentUpon>FormVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servico.cs" />
@@ -101,6 +113,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProduto.resx">
       <DependentUpon>FormProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroVenda.resx">
+      <DependentUpon>CadastroVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVenda.resx">
+      <DependentUpon>FormVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -121,12 +139,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="CadastroVenda.cs" />
-    <Compile Include="CadastroVenda.Designer.cs" />
-    <None Include="CadastroVenda.resx" />
-    <Compile Include="FormVenda.cs" />
-    <Compile Include="FormVenda.Designer.cs" />
-    <None Include="FormVenda.resx" />
+    <Compile Include="DAO.cliente.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

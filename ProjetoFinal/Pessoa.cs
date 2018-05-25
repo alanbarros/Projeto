@@ -15,10 +15,11 @@ namespace ProjetoFinal
 
 		public int Idade()
         {
-			var birthdate = DataNascimento;
+
+			if (DataNascimento == new DateTime()) return 0;
 			var today = DateTime.Today;
-            var age = today.Year - birthdate.Year;
-            if (birthdate > today.AddYears(-age)) age--;
+			var age = today.Year - DataNascimento.Year;
+			if (DataNascimento > today.AddYears(-age)) age--;
 			return age;
         }	
 
