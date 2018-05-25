@@ -13,7 +13,16 @@ namespace ProjetoFinal
         public DateTime DataNascimento { get; private set; }
 		public string Status { get; private set; }
 
-		public Pessoa(string Nome, string Cpf, DateTime DataNascimento, string Status)
+		public int Idade()
+        {
+			var birthdate = DataNascimento;
+			var today = DateTime.Today;
+            var age = today.Year - birthdate.Year;
+            if (birthdate > today.AddYears(-age)) age--;
+			return age;
+        }	
+
+		protected Pessoa(string Nome, string Cpf, DateTime DataNascimento, string Status)
         {
             this.Nome = Nome;
             this.Cpf = Cpf;
@@ -21,9 +30,9 @@ namespace ProjetoFinal
 			this.Status = Status;
         }
 
-		public Pessoa(){}
+		protected Pessoa(){}
 
-		public Pessoa(string Cpf){
+		protected Pessoa(string Cpf){
 			this.Cpf = Cpf;
 		}
 

@@ -26,7 +26,7 @@ namespace ProjetoFinal
 
         public override string ToString()
         {
-            return this.Nome;
+            return Nome;
         }
     }
 }

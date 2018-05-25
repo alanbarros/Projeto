@@ -19,7 +19,7 @@ namespace ProjetoFinal
 
 		void listClientes_DoubleClick(object sender, EventArgs e)
 		{
-			bool result = dgCliente.CurrentCell.RowIndex > -1 ? true : false; // Verifica se selecionou algum item na lista
+			bool result = dgCliente.CurrentCell.RowIndex > -1; // Verifica se selecionou algum item na lista
 			if (result) EditarCliente(dao.cliente[dgCliente.CurrentCell.RowIndex]); // Se tiver algum item selecionado, chama a função
 		}
 
@@ -38,7 +38,7 @@ namespace ProjetoFinal
 
 		void btnEditar_Click(object sender, EventArgs e)
 		{
-            bool result = dgCliente.CurrentCell.RowIndex > -1 ? true : false; // Verifica se selecionou algum item na lista
+            bool result = dgCliente.CurrentCell.RowIndex > -1; // Verifica se selecionou algum item na lista
             if (result) EditarCliente(dao.cliente[dgCliente.CurrentCell.RowIndex]); // Se tiver algum item selecionado, chama a função
             else
             {
@@ -61,9 +61,7 @@ namespace ProjetoFinal
 
             foreach (Cliente c in dao.cliente)
             {
-                DateTime hoje = DateTime.Today;
-
-                string[] row = new string[] { c.Nome, (hoje - c.DataNascimento).ToString(), c.Cpf, c.Status };
+				string[] row = { c.Nome, c.Idade().ToString(), c.Cpf, c.Status };
                 dgCliente.Rows.Add(row);
             }
 
@@ -78,7 +76,7 @@ namespace ProjetoFinal
 
 		void AdicionarNovo()
 		{
-			FormCliente popup = new FormCliente(dao, new Cliente());
+			var popup = new FormCliente(dao, new Cliente());
 			popup.ShowDialog();
 			AtualizarLista();
 		}
@@ -86,7 +84,7 @@ namespace ProjetoFinal
 		bool EditarCliente(Cliente cliente)
 		{
 			if(dao.cliente.Contains(cliente)){
-				FormCliente editCli = new FormCliente(dao, cliente);
+				var editCli = new FormCliente(dao, cliente);
 				editCli.ShowDialog();
 				AtualizarLista();
 				return true;
@@ -104,9 +102,9 @@ namespace ProjetoFinal
 			return false;
 		}
 
-        private void dgCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		void dgCliente_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
+			MessageBox.Show("Oi00");
         }
 
         // Fim da Classe

@@ -18,10 +18,10 @@ namespace ProjetoFinal
             InitializeComponent();
 
             dao = d;
-            Montar(dao);
+            Montar();
         }
 
-        public void Montar(DAO d)
+        public void Montar()
         {
             cmbCliente.Items.AddRange(dao.cliente.ToArray());
         }

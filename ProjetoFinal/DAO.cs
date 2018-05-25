@@ -6,37 +6,40 @@ using System.Threading.Tasks;
 
 namespace ProjetoFinal
 {
-    public class DAO
-    {
-        public List<Cliente> cliente;
-        public List<Produto> produto;
+	public class DAO
+	{
+		public List<Cliente> cliente;
+		public List<Produto> produto;
 
-        public DAO()
-        {
-            cliente = new List<Cliente>();
-            produto = new List<Produto>();
+		public DAO()
+		{
+			cliente = new List<Cliente>();
+			produto = new List<Produto>();
 
-        }
+		}
 
-        public void AdicionarCliente(Cliente cliente)
-        {
-            this.cliente.Add(cliente);
-        }
+		public void AdicionarCliente(Cliente cliente)
+		{
+			this.cliente.Add(cliente);
+		}
 
-        public bool RemoverCliente(Cliente cliente)
-        {
-			try{
+		public bool RemoverCliente(Cliente cliente)
+		{
+			try
+			{
 				this.cliente.Remove(cliente);
 				return true;
-			} catch{
+			}
+			catch
+			{
 				return false;
 			}
-        }
+		}
 
-        public void EditarCliente(Cliente cliente)
-        {
+		public void EditarCliente(Cliente cliente)
+		{
 			this.cliente[this.cliente.IndexOf(cliente)] = cliente;
-        }
+		}
 
-    }
+	}
 }

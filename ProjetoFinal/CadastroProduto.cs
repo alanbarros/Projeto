@@ -20,7 +20,7 @@ namespace ProjetoFinal
 
         }
 
-        private void btnNovoProduto_Click(object sender, EventArgs e)
+        void btnNovoProduto_Click(object sender, EventArgs e)
         {
             Adicionar();
         }

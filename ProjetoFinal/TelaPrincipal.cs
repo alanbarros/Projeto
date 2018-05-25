@@ -21,13 +21,13 @@ namespace ProjetoFinal
 
         void btnCliente_Click(object sender, EventArgs e)
         {
-            CadastroCliente cadCli = new CadastroCliente(dao);
+            var cadCli = new CadastroCliente(dao);
             cadCli.ShowDialog();
         }
 
-        private void btnProduto_Click(object sender, EventArgs e)
+        void btnProduto_Click(object sender, EventArgs e)
         {
-            CadastroProduto cadProd = new CadastroProduto(dao);
+            var cadProd = new CadastroProduto(dao);
             cadProd.ShowDialog();
         }
     }

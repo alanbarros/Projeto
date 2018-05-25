@@ -101,7 +101,7 @@
             this.dgCliente.Name = "dgCliente";
             this.dgCliente.Size = new System.Drawing.Size(526, 275);
             this.dgCliente.TabIndex = 14;
-            this.dgCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCliente_CellContentClick);
+			this.dgCliente.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgCliente_RowHeaderMouseDoubleClick);
             // 
             // CadastroCliente
             // 
