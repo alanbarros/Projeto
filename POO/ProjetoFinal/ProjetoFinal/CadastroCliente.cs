@@ -26,14 +26,14 @@ namespace ProjetoFinal
 		void BtnBuscar_Click(object sender, EventArgs e)
 		{
 			if (!EditarCliente(new Cliente(txtBuscar.Text))){
-				MessageBox.Show("Cliente não localizado");
+				MessageBox.Show("Cliente não localizado!");
 			}        
 		}
 
 		void btnExcluir_Click(object sender, EventArgs e)
 		{
 			if(!ExcluirCliente(dao.cliente[listClientes.SelectedIndex]))
-				MessageBox.Show("Selecione antes um cliente");
+				MessageBox.Show("Selecione antes um cliente!");
 		}
 
 		void btnEditar_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace ProjetoFinal
             if (result) EditarCliente(dao.cliente[listClientes.SelectedIndex]); // Se tiver algum item selecionado, chama a função
             else
             {
-                MessageBox.Show("Selecione um cliente antes!"); 
+                MessageBox.Show("Selecione antes um cliente!"); 
             }
             
 		}
@@ -83,6 +83,12 @@ namespace ProjetoFinal
 			return false;
 		}
 
+        private void btnTela_Click(object sender, EventArgs e)
+        {
+            FormVenda fv = new FormVenda(dao);
+            fv.ShowDialog();
+        }
+
         // Fim da Classe
-	}
+    }
 }

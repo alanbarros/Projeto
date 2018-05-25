@@ -50,3 +50,15 @@ C:\Users\CT Noite\Documents\Alan\GitHub\atualizado\ProjetoFinal\POO\ProjetoFinal
 C:\Users\CT Noite\Documents\Alan\GitHub\atualizado\ProjetoFinal\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csproj.GenerateResource.Cache
 C:\Users\CT Noite\Documents\Alan\GitHub\atualizado\ProjetoFinal\POO\ProjetoFinal\ProjetoFinal\bin\Debug\ProjetoFinal.exe
 C:\Users\CT Noite\Documents\Alan\GitHub\atualizado\ProjetoFinal\POO\ProjetoFinal\ProjetoFinal\bin\Debug\ProjetoFinal.pdb
+C:\Users\CT Noite\Documents\Projetos 2NI\LOO\ProjetoFinal\Master\POO\ProjetoFinal\ProjetoFinal\bin\Debug\ProjetoFinal.exe.config
+C:\Users\CT Noite\Documents\Projetos 2NI\LOO\ProjetoFinal\Master\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.exe
+C:\Users\CT Noite\Documents\Projetos 2NI\LOO\ProjetoFinal\Master\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.pdb
+C:\Users\CT Noite\Documents\Projetos 2NI\LOO\ProjetoFinal\Master\POO\ProjetoFinal\ProjetoFinal\bin\Debug\ProjetoFinal.exe
+C:\Users\CT Noite\Documents\Projetos 2NI\LOO\ProjetoFinal\Master\POO\ProjetoFinal\ProjetoFinal\bin\Debug\ProjetoFinal.pdb
+C:\Users\CT Noite\Documents\Projetos 2NI\LOO\ProjetoFinal\Master\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csprojResolveAssemblyReference.cache
+C:\Users\CT Noite\Documents\Projetos 2NI\LOO\ProjetoFinal\Master\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.CadastroCliente.resources
+C:\Users\CT Noite\Documents\Projetos 2NI\LOO\ProjetoFinal\Master\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.FormCliente.resources
+C:\Users\CT Noite\Documents\Projetos 2NI\LOO\ProjetoFinal\Master\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.CadastroVenda.resources
+C:\Users\CT Noite\Documents\Projetos 2NI\LOO\ProjetoFinal\Master\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.Properties.Resources.resources
+C:\Users\CT Noite\Documents\Projetos 2NI\LOO\ProjetoFinal\Master\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csproj.GenerateResource.Cache
+C:\Users\CT Noite\Documents\Projetos 2NI\LOO\ProjetoFinal\Master\POO\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.FormVenda.resources

@@ -35,6 +35,7 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnTela = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -102,11 +103,22 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "CPF:";
             // 
+            // btnTela
+            // 
+            this.btnTela.Location = new System.Drawing.Point(336, 191);
+            this.btnTela.Name = "btnTela";
+            this.btnTela.Size = new System.Drawing.Size(75, 23);
+            this.btnTela.TabIndex = 14;
+            this.btnTela.Text = "Outra tela";
+            this.btnTela.UseVisualStyleBackColor = true;
+            this.btnTela.Click += new System.EventHandler(this.btnTela_Click);
+            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 347);
+            this.Controls.Add(this.btnTela);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.listClientes);
@@ -130,5 +142,6 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnTela;
     }
 }
