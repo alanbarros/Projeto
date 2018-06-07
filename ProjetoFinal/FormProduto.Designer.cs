@@ -40,6 +40,10 @@
             this.lblGarantiaProduto = new System.Windows.Forms.Label();
             this.btnGravarProduto = new System.Windows.Forms.Button();
             this.btnCancelarProduto = new System.Windows.Forms.Button();
+            this.txtMarcaProduto = new System.Windows.Forms.TextBox();
+            this.lblMarcaProduto = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cmbStatusProduto
@@ -101,9 +105,9 @@
             this.cmbTipoProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoProduto.FormattingEnabled = true;
             this.cmbTipoProduto.Items.AddRange(new object[] {
-            "Inativo",
-            "Ativo",
-            "Bloqueado"});
+            "Computador",
+            "Serviço",
+            "Acessório"});
             this.cmbTipoProduto.Location = new System.Drawing.Point(82, 104);
             this.cmbTipoProduto.Name = "cmbTipoProduto";
             this.cmbTipoProduto.Size = new System.Drawing.Size(113, 21);
@@ -136,27 +140,66 @@
             // 
             // btnGravarProduto
             // 
-            this.btnGravarProduto.Location = new System.Drawing.Point(207, 160);
+            this.btnGravarProduto.Location = new System.Drawing.Point(225, 171);
             this.btnGravarProduto.Name = "btnGravarProduto";
             this.btnGravarProduto.Size = new System.Drawing.Size(75, 23);
             this.btnGravarProduto.TabIndex = 30;
             this.btnGravarProduto.Text = "Gravar";
             this.btnGravarProduto.UseVisualStyleBackColor = true;
+            this.btnGravarProduto.Click += new System.EventHandler(this.btnGravarProduto_Click);
             // 
             // btnCancelarProduto
             // 
-            this.btnCancelarProduto.Location = new System.Drawing.Point(295, 160);
+            this.btnCancelarProduto.Location = new System.Drawing.Point(306, 171);
             this.btnCancelarProduto.Name = "btnCancelarProduto";
             this.btnCancelarProduto.Size = new System.Drawing.Size(75, 23);
             this.btnCancelarProduto.TabIndex = 31;
             this.btnCancelarProduto.Text = "Cancelar";
             this.btnCancelarProduto.UseVisualStyleBackColor = true;
+            this.btnCancelarProduto.Click += new System.EventHandler(this.btnCancelarProduto_Click);
+            // 
+            // txtMarcaProduto
+            // 
+            this.txtMarcaProduto.Location = new System.Drawing.Point(82, 141);
+            this.txtMarcaProduto.Name = "txtMarcaProduto";
+            this.txtMarcaProduto.Size = new System.Drawing.Size(113, 20);
+            this.txtMarcaProduto.TabIndex = 32;
+            // 
+            // lblMarcaProduto
+            // 
+            this.lblMarcaProduto.AutoSize = true;
+            this.lblMarcaProduto.Location = new System.Drawing.Point(26, 147);
+            this.lblMarcaProduto.Name = "lblMarcaProduto";
+            this.lblMarcaProduto.Size = new System.Drawing.Size(37, 13);
+            this.lblMarcaProduto.TabIndex = 33;
+            this.lblMarcaProduto.Text = "Marca";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Código: ";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(73, 9);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(37, 20);
+            this.txtId.TabIndex = 35;
             // 
             // FormProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(393, 206);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMarcaProduto);
+            this.Controls.Add(this.txtMarcaProduto);
             this.Controls.Add(this.btnCancelarProduto);
             this.Controls.Add(this.btnGravarProduto);
             this.Controls.Add(this.lblGarantiaProduto);
@@ -190,5 +233,9 @@
         private System.Windows.Forms.Label lblGarantiaProduto;
         private System.Windows.Forms.Button btnGravarProduto;
         private System.Windows.Forms.Button btnCancelarProduto;
+        private System.Windows.Forms.TextBox txtMarcaProduto;
+        private System.Windows.Forms.Label lblMarcaProduto;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtId;
     }
 }

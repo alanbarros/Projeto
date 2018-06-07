@@ -10,8 +10,7 @@ namespace ProjetoFinal
     {
         public double Garantia { get; private set; }
 
-        public Computador (string Nome, double Preco, string Marca, string Tipo, double Garantia )
-            : base (Nome, Preco, Marca, Tipo)
+        public Computador (string Nome, double Preco, string Marca, string Tipo, string Status, int Garantia) : base(Nome, Preco, Marca, Tipo, Status, Garantia)
         {
             this.Garantia = Garantia;
         }

@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnNovoProduto = new System.Windows.Forms.Button();
             this.btnEditarProduto = new System.Windows.Forms.Button();
             this.btnExcluirProduto = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.txtBuscarProduto = new System.Windows.Forms.TextBox();
             this.lblBuscarProduto = new System.Windows.Forms.Label();
             this.btnBuscarProduto = new System.Windows.Forms.Button();
             this.dataGriProduto = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGriProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNovoProduto
@@ -56,6 +56,7 @@
             this.btnEditarProduto.TabIndex = 1;
             this.btnEditarProduto.Text = "Editar";
             this.btnEditarProduto.UseVisualStyleBackColor = true;
+            this.btnEditarProduto.Click += new System.EventHandler(this.btnEditarProduto_Click);
             // 
             // btnExcluirProduto
             // 
@@ -65,13 +66,14 @@
             this.btnExcluirProduto.TabIndex = 2;
             this.btnExcluirProduto.Text = "Excluir";
             this.btnExcluirProduto.UseVisualStyleBackColor = true;
+            this.btnExcluirProduto.Click += new System.EventHandler(this.btnExcluirProduto_Click);
             // 
-            // txtBuscar
+            // txtBuscarProduto
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(359, 22);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(104, 20);
-            this.txtBuscar.TabIndex = 13;
+            this.txtBuscarProduto.Location = new System.Drawing.Point(359, 22);
+            this.txtBuscarProduto.Name = "txtBuscarProduto";
+            this.txtBuscarProduto.Size = new System.Drawing.Size(104, 20);
+            this.txtBuscarProduto.TabIndex = 13;
             // 
             // lblBuscarProduto
             // 
@@ -90,16 +92,15 @@
             this.btnBuscarProduto.TabIndex = 15;
             this.btnBuscarProduto.Text = "Buscar";
             this.btnBuscarProduto.UseVisualStyleBackColor = true;
+            this.btnBuscarProduto.Click += new System.EventHandler(this.btnBuscarProduto_Click);
             // 
             // dataGriProduto
             // 
-            this.dataGriProduto.AutoGenerateColumns = false;
             this.dataGriProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGriProduto.Location = new System.Drawing.Point(12, 60);
             this.dataGriProduto.Name = "dataGriProduto";
             this.dataGriProduto.Size = new System.Drawing.Size(528, 275);
             this.dataGriProduto.TabIndex = 16;
-            // 
             // 
             // CadastroProduto
             // 
@@ -109,12 +110,13 @@
             this.Controls.Add(this.dataGriProduto);
             this.Controls.Add(this.btnBuscarProduto);
             this.Controls.Add(this.lblBuscarProduto);
-            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.txtBuscarProduto);
             this.Controls.Add(this.btnExcluirProduto);
             this.Controls.Add(this.btnEditarProduto);
             this.Controls.Add(this.btnNovoProduto);
             this.Name = "CadastroProduto";
             this.Text = "Cadastro de Produtos";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGriProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,7 +127,7 @@
         private System.Windows.Forms.Button btnNovoProduto;
         private System.Windows.Forms.Button btnEditarProduto;
         private System.Windows.Forms.Button btnExcluirProduto;
-        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.TextBox txtBuscarProduto;
         private System.Windows.Forms.Label lblBuscarProduto;
         private System.Windows.Forms.Button btnBuscarProduto;
         private System.Windows.Forms.DataGridView dataGriProduto;    }

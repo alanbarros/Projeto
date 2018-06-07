@@ -149,7 +149,11 @@ namespace ProjetoFinal
 
 			if (criacaoCliente == 1) // Se conseguir montar a o objeto cliente
 			{
-				dao.RedefinirCliente(cliente); // Chama a função para editar o cliente atualizado
+                if (!dao.RedefinirCliente(cliente)) // Chama a função para editar o cliente atualizado
+                {
+                    MessageBox.Show("Não é permitido editar o CPF, recrie o cliente!");
+                };
+
 				Close();
 			}
 

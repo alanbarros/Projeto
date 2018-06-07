@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -62,7 +61,17 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="Computador.cs" />
     <Compile Include="DAO.cs" />
+    <Compile Include="DAO.produto.cs">
+      <DependentUpon>DAO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO.venda.cs">
+      <DependentUpon>DAO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO.cliente.cs">
+      <DependentUpon>DAO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Endereco.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
@@ -75,6 +84,12 @@
     </Compile>
     <Compile Include="FormProduto.Designer.cs">
       <DependentUpon>FormProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVenda.Designer.cs">
+      <DependentUpon>FormVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="IProduto.cs" />
     <Compile Include="Pessoa.cs" />
@@ -90,15 +105,16 @@
     <Compile Include="CadastroVenda.Designer.cs">
       <DependentUpon>CadastroVenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormVenda.cs">
+    <Compile Include="FormItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormVenda.Designer.cs">
-      <DependentUpon>FormVenda.cs</DependentUpon>
+    <Compile Include="FormItem.Designer.cs">
+      <DependentUpon>FormItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servico.cs" />
+    <Compile Include="Venda.cs" />
     <EmbeddedResource Include="CadastroCliente.resx">
       <DependentUpon>CadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,11 +130,14 @@
     <EmbeddedResource Include="FormProduto.resx">
       <DependentUpon>FormProduto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormVenda.resx">
+      <DependentUpon>FormVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastroVenda.resx">
       <DependentUpon>CadastroVenda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormVenda.resx">
-      <DependentUpon>FormVenda.cs</DependentUpon>
+    <EmbeddedResource Include="FormItem.resx">
+      <DependentUpon>FormItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -139,7 +158,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="DAO.cliente.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -19,9 +19,18 @@
             }
         }
 
-        public void RedefinirCliente(Cliente cliente)
+        public bool RedefinirCliente(Cliente cliente)
         {
-            this.cliente[this.cliente.IndexOf(cliente)] = cliente;
+            int posicao = this.cliente.IndexOf(cliente);
+
+            try
+            {
+                this.cliente[posicao] = cliente;
+            } catch {
+                return false;
+            }
+
+            return true;
         }
 	}
 }

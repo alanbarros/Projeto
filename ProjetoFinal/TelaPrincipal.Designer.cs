@@ -51,7 +51,7 @@
             this.btnVenda.TabIndex = 1;
             this.btnVenda.Text = "Efetuar Venda";
             this.btnVenda.UseVisualStyleBackColor = true;
-			this.btnVenda.Click += new System.EventHandler(this.btnVenda_Click);
+            this.btnVenda.Click += new System.EventHandler(this.btnVenda_Click);
             // 
             // btnProduto
             // 
@@ -72,6 +72,7 @@
             this.Controls.Add(this.btnVenda);
             this.Controls.Add(this.btnCliente);
             this.Name = "TelaPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
 
